@@ -12,6 +12,7 @@ def main():
     bg_img = pg.image.load("fig/pg_bg.jpg")
     bg_img2 = pg.image.load("fig/pg_bg.jpg")
     bg_img2 = pg.transform.flip(bg_img2, True,False)
+    bg_img12 = pg.image.load("fig/pg_bg.jpg")
     koukaton3_img = pg.image.load("fig/3.png")
     koukaton3_img = pg.transform.flip(koukaton3_img,True,False)
     tmr = 0
@@ -21,11 +22,12 @@ def main():
 
         screen.blit(bg_img, [-tmr, 0])
         screen.blit(bg_img2, [-tmr + 1600, 0])
+        screen.blit(bg_img12, [-tmr + 3200, 0])
         screen.blit(koukaton3_img,[300,200])
         pg.display.update()
-        tmr += 1 
-        if tmr == 800:
-            tmr == 0    
+        tmr += 1    
+        if tmr > 3199:
+            tmr = 0 
         clock.tick(200)
 
 
